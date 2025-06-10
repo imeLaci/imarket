@@ -1,65 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>iMarket Webshop</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bejelentkezés - iMarket</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-container{
+      max-width:400px;
+      margin:100px auto;
+      text-align:center;
+      background:#fff;
+      padding:2rem;
+      border-radius:8px;
+      box-shadow:0 2px 6px rgba(0,0,0,.15);
+    }
+    label,input{display:block;width:100%;margin-bottom:10px;}
+    input[type="submit"]{width:auto;}
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1 class="logo">iMarket Webshop</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Főoldal</a></li>
-                    <li><a href="#">Termékek</a></li>
-                    <li><a href="#">Rólunk</a></li>
-                    <li><a href="#">Kapcsolat</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h2>Kezdjen bele a vásárlásba</h2>
-            <p>Tekintse meg legnépszerűbb termékeinket!</p>
-        </div>
-    </section>
-
-    <section class="products">
-        <div class="container product-grid">
-        <article class="product">
-            <img src="https://via.placeholder.com/200x200" alt="Termék 1">
-            <h3>Termék 1</h3>
-            <p>Rövid termékleírás.</p>
-            <p>Ár: 1 000 Ft</p>
-            <button>Kosárba</button>
-        </article>
-
-        <article class="product">
-            <img src="https://via.placeholder.com/200x200" alt="Termék 2">
-            <h3>Termék 2</h3>
-            <p>Rövid termékleírás.</p>
-            <p>Ár: 2 000 Ft</p>
-            <button>Kosárba</button>
-        </article>
-
-        <article class="product">
-            <img src="https://via.placeholder.com/200x200" alt="Termék 3">
-            <h3>Termék 3</h3>
-            <p>Rövid termékleírás.</p>
-            <p>Ár: 3 000 Ft</p>
-            <button>Kosárba</button>
-        </article>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 iMarket</p>
-        </div>
-    </footer>
+<body class="login-page">
+  <header>
+    <div class="logo">iMarketEurope Kft.</div>
+  </header>
+  <div class="login-container">
+    <h1>Belépés</h1>
+    <form id="loginForm">
+      <label for="username">Felhasználónév</label>
+      <input type="text" id="username" required>
+      <label for="password">Jelszó</label>
+      <input type="password" id="password" required>
+      <input type="submit" value="Belépés">
+    </form>
+    <p id="error" style="color:red;display:none;">Hibás felhasználónév vagy jelszó!</p>
+    </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      var u=document.getElementById('username').value;
+      var p=document.getElementById('password').value;
+      if(u==='admin' && p==='admin'){
+        window.location.href='error953.html';
+      }else{
+        document.getElementById('error').style.display='block';
+      }
+    });
+  </script>
 </body>
 </html>
